@@ -111,11 +111,3 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
-
-plugins:
-  - serverless-plugin-datadog
-custom:
-  datadog:
-    addLayers: true
-    apiKey: "<YOUR_DATADOG_API_KEY>"
-    flushMetricsToLogs: false
