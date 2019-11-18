@@ -1,0 +1,9 @@
+{
+  "name": "dd-reinvent-twitch",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-plugin-datadog": "^0.7.0"
+  }
+}
