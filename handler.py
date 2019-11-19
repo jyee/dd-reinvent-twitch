@@ -1,24 +1,25 @@
 import json
+import requests
 
-
-def hello(event, context):
-    body = {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "input": event
-    }
+def getdog(event, context):
+    r = requests.get("https://dog.ceo/api/breeds/image/random")
+    data = r.json()
+    url = data["message"]
 
     response = {
         "statusCode": 200,
-        "body": json.dumps(body)
+        "url": url
     }
-
     return response
 
-    # Use this code if you don't use the http event with the LAMBDA-PROXY
-    # integration
-    """
-    return {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "event": event
+
+def getcat(event, context):
+    r = requests.get("https://api.thecatapi.com/v1/images/search")
+    data = r.json()
+    url = data[0]["url"]
+
+    response = {
+        "statusCode": 200,
+        "url": url
     }
-    """
+    return response
